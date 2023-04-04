@@ -3,7 +3,8 @@ import * as Font from 'expo-font'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
-const ListaDeTarefas = (props) => {
+
+const ListaDeTarefas = ( props) => {
     let [fontsLoaded] = useFonts({
         RobotoCondensed_400Regular,
     });
@@ -13,8 +14,8 @@ const ListaDeTarefas = (props) => {
     }
     return (
         <View style={styles.containerLista}>
-            <Text style={styles.tarefa}>`{props.nomeDaTarefa} deve ser realizada no dia {props.dataDaTarefa}`</Text>
-            <TouchableOpacity>
+            <Text style={styles.tarefa}>`{props.nomeDaTarefa} deve ser realizada no dia {props.dataDaTarefa} as {props.horaDaTarefa}`</Text>
+            <TouchableOpacity onPress={()=>{props.deleteTarefa(props.id)}} style={styles.botaoExcluir}>
                 <AntDesign name="minuscircleo" size={24} color="black" />
             </TouchableOpacity>
         </View>
@@ -31,10 +32,10 @@ const styles = StyleSheet.create({
         justifyContent:"space-around"
     },
     tarefa: {
-        fontFamily:"RobotoCondensed_400Regular"
+        fontFamily:"RobotoCondensed_400Regular",
     },
     botaoExcluir:{
-        backgroundColor:"pink"
+        paddingHorizontal:10
     }
 });
 
