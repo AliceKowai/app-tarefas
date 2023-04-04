@@ -1,20 +1,24 @@
+import { useCallback } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import Header  from './components/header';
+import ListaDeTarefas from './components/listaDeTarefas';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Header/>
+      <ListaDeTarefas nomeDaTarefa="Limpar a bunda" dataDaTarefa="03/04/2023"/>
+      <ListaDeTarefas nomeDaTarefa="Limpar a bunda" dataDaTarefa="03/04/2023"/>
+      <ListaDeTarefas nomeDaTarefa="Limpar a bunda" dataDaTarefa="03/04/2023"/>
+      <ListaDeTarefas nomeDaTarefa="Limpar a bunda" dataDaTarefa="03/04/2023"/>
+      <StatusBar backgroundColor='#ffff' />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
