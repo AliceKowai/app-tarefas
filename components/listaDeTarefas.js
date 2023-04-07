@@ -15,7 +15,7 @@ const ListaDeTarefas = (props) => {
     return (
         <View style={styles.containerLista}>
             <Text style={styles.tarefa}>{props.nomeDaTarefa}</Text>
-            <TouchableOpacity onPress={() => { props.deleteTarefa(props.id) }} style={styles.botaoExcluir}>
+            <TouchableOpacity onPress={props.deleteTarefa} style={styles.botaoExcluir}>
                 <AntDesign name="minuscircleo" size={24} color="black" />
             </TouchableOpacity>
 

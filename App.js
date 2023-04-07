@@ -15,12 +15,14 @@ export default function App() {
 
   const [tarefas, setTarefas] = useState( [
     {
+      nome:"aaaaaaaaaaaaaaaaaaaaa",
+      id:0
     },
   
   ])
 
   const deleteTarefa = (id) =>{
-    alert("Tarefa com "+ id +" foi excluida com sucesso")
+    alert("Tarefa com id"+ id +" foi excluida com sucesso")
     let newTarefas = tarefas.filter(function(val) {
       return val.id != id
     })
@@ -60,7 +62,7 @@ const salvarTarefi = () =>{
       {
         tarefas.map((val) => {
           return(
-            <ListaDeTarefas key={val.id} nomeDaTarefa={val.tarefa} dataDaTarefa={val.data} horaDaTarefa={val.hora} deleteTarefa={() => {deleteTarefa(val.id)}} />
+            <ListaDeTarefas key={val.id} nomeDaTarefa={val.tarefa} deleteTarefa={() => {deleteTarefa(val.id)}} />
 
           )
         })
